@@ -12,5 +12,12 @@ How to use:
 
 ![load](https://i.imgur.com/ptdlgQm.png)
 
+5. If you like big size notification, hit Edit button in Rainmeter Manage.
+Find `Big` in `[Variables]` section and set it to `1`
+
+![edit](https://i.imgur.com/UzzqN9H.png)
+
+Hit Refresh button in Rainmete Manage.
+
 ### Credits:
 [NotificationToaster Powershell script by kyriakos876](https://forum.rainmeter.net/viewtopic.php?f=27&t=29933)  
