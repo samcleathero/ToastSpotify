@@ -9,6 +9,7 @@ $ToastXml = New-Object -TypeName Windows.Data.Xml.Dom.XmlDocument
 
 $appLogoOverrideVar = [System.Web.HttpUtility]::HtmlEncode($RmAPI.VariableStr("NotificationIcon"))
 $isBigSize = $RmAPI.Variable("Big") -eq 1
+$isSilent = $RmAPI.Variable("Silent") -eq 1
 function EncodeVar {
 	param([string]$name)
     $variableValue = $RmAPI.MeasureStr($name)
@@ -38,6 +39,16 @@ function ToastIt {
 	<image placement="appLogoOverride" hint-crop="circle" src="$HeroImageVar"/>
 "@
 	})
+	
+	$silent = $(if ($isSilent) {
+	@"
+	<audio silent="true"/>
+"@
+	} else {
+	@"
+	<audio silent="false"/>
+"@
+	})
 
     $RmAPI.log($size)
 [xml]$ToastTemplate = @"
@@ -49,6 +60,7 @@ function ToastIt {
 			$size
 		</binding>
 	</visual>
+	$silent
 </toast>
 "@
 
