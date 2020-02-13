@@ -58,6 +58,7 @@ function ToastIt {
 			<text>$TitleVar</text>
 			<text>$ContextVar</text>
 			$size
+			<text placement="attribution">Spotify</text>
 		</binding>
 	</visual>
 	$silent
